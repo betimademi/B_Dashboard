@@ -262,11 +262,7 @@ Author: SAEROX
             ?>
 
             </select>
-<<<<<<< HEAD
-            <button type="submit" class="btn btn-outline-info" name="click">Submit</button>
-=======
-            <button type="submit" class="btn btn-outline-info" name="click">Enter</button>
->>>>>>> 26c67f7a0c2c589a3af0e710ebe25ea3c2de19d6
+            <button type="submit" class="btn btn-outline-info" name="click">Press Enter</button>
         </div>
 
 
@@ -292,7 +288,7 @@ Author: SAEROX
 <div class="col-4">
     <p>
   <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
-    Show Category-Tree
+    Show Category Tree
   </a>
 </p>
 </div>
