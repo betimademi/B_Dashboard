@@ -262,7 +262,11 @@ Author: SAEROX
             ?>
 
             </select>
+<<<<<<< HEAD
             <button type="submit" class="btn btn-outline-info" name="click">Submit</button>
+=======
+            <button type="submit" class="btn btn-outline-info" name="click">Enter</button>
+>>>>>>> 26c67f7a0c2c589a3af0e710ebe25ea3c2de19d6
         </div>
 
 
