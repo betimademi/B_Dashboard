@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <Urunler />
+  <Markalar>
+    <Marka>
+      <MarkaID>4</MarkaID>
+      <Tanim>MODAGON-1</Tanim>
+    </Marka>
+    <Marka>
+      <MarkaID>5</MarkaID>
+      <Tanim>MODAGON-2</Tanim>
+    </Marka>
+  </Markalar>
+</Root>
