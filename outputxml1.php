@@ -41,14 +41,14 @@ Author: SAEROX
         <div id="preloader">
             <div class="canvas">
                 <img src="assets/img/bifeks_logo.png" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
+                <div class="spinner"></div>
             </div>
         </div>
         <!-- End Preloader -->
         <div class="page">
             <!-- Begin Header -->
             <header class="header">
-                <nav class="navbar fixed-top">         
+                <nav class="navbar fixed-top">
                     <!-- Begin Search Box-->
                     <div class="search-box">
                         <button class="dismiss"><i class="ion-close-round"></i></button>
@@ -159,23 +159,23 @@ Author: SAEROX
                                         <img src="assets/img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
                                     </li>
                                     <li>
-                                        <a href="pages-profile.html" class="dropdown-item"> 
+                                        <a href="pages-profile.html" class="dropdown-item">
                                             Profile
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="app-mail.html" class="dropdown-item"> 
+                                        <a href="app-mail.html" class="dropdown-item">
                                             Messages
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="dropdown-item no-padding-bottom"> 
+                                        <a href="#" class="dropdown-item no-padding-bottom">
                                             Settings
                                         </a>
                                     </li>
                                     <li class="separator"></li>
                                     <li>
-                                        <a href="pages-faq.html" class="dropdown-item no-padding-top"> 
+                                        <a href="pages-faq.html" class="dropdown-item no-padding-top">
                                             Faq
                                         </a>
                                     </li>
@@ -209,12 +209,13 @@ Author: SAEROX
                             <li><a href="outputxml1.php"><i class="la la-away"></i><span>Output version.1</span></a></li>
                             <li><a href="outputxml.php"><i class="la la-away"></i><span>Output version.2</span></a></li>
                             <li><a href="shownode.php"><i class="la la-away"></i><span>Output Advanced</span></a></li>
+                            <li><a href="comparexml.php"><i class="la la-away"></i><span>Compare XML Files</span></a></li>
                             <li><a href="woocomerce.php"><i class="la la-away"></i><span>WooCommerce</span></a></li>
                             <li><a href="magentorequest.php"><i class="la la-away"></i><span>Magento Request</span></a></li>
                             <li><a href="prestarequest.php"><i class="la la-away"></i><span>Presta Request</span></a></li>
                             <li><a href="xmlrequest.php"><i class="la la-away"></i><span>Get XML</span></a></li>
                         </ul>
-                        
+
                         <!-- End Main Navigation -->
                     </nav>
                     <!-- End Side Navbar -->
@@ -239,7 +240,7 @@ Author: SAEROX
                         <!-- End Page Header -->
                         <form action="" method="post">
 
-                            
+
                             <div class="row">
 
 
@@ -266,7 +267,7 @@ Author: SAEROX
             if (file_exists($file)){
             $dom->load($file);
             $xpath = new DOMXPath($dom);
-            $nodeOne = $xpath->query('//Ozellik'); 
+            $nodeOne = $xpath->query('//Ozellik');
             $nodeTwo = $xpath->query('//Kategori');         //Ebijuteri -> kategori   //YokYok -> Kategori   //iFondi -> Kategori
             $nodeThree = $xpath->query('//KategoriTree');    //Ebijuteri -> AnaKategori  //YokYok -> KategoriTree  //iFondi -> KategoriTree
             $array = array();
@@ -275,9 +276,9 @@ Author: SAEROX
             foreach ($nodeOne as $color) {
                 if($color->getAttribute("Tanim")==="Ngjyra"){
 
-                    
+
                     $array[] = $color->nodeValue;
-                   
+
             }
         }
 
@@ -296,8 +297,8 @@ Author: SAEROX
                 $k = array_filter($resultkategori);
                 $resultkategoritree = super_unique($array3);
                 $kt = array_filter($resultkategoritree);
-               
-                
+
+
                echo '<div class="col-2">';
                echo '<ul class="list-group list-group-flush">';
                echo '<li class="list-group-item list-group-item-primary">COLOR</li>';
@@ -305,7 +306,7 @@ Author: SAEROX
                 if(in_array($value,$colorTRAL)){
                     echo '<li class="list-group-item">' .$value. '</li>';
                 }
-                
+
                 else
                 {
                     echo '<li class="list-group-item list-group-item-danger">' .$value. '</li>';
@@ -322,7 +323,7 @@ Author: SAEROX
                     if(in_array(htmlspecialchars($kat),$KategoriTRAL)){
                     echo '<li class="list-group-item">' .$kat. '</li>';
                 }
-                
+
                 else
                 {
                     echo '<li class="list-group-item list-group-item-danger">' .$kat. '</li>';
@@ -340,7 +341,7 @@ Author: SAEROX
 
                     echo '<li class="list-group-item">' .$tree. '</li>';
                 }
-                
+
                 else
                 {
                     echo '<li class="list-group-item list-group-item-danger">' .$tree. '</li>';
@@ -359,7 +360,7 @@ Author: SAEROX
             ?>
 
                     </div>
-                            
+
                         </form>
 
 
@@ -367,7 +368,7 @@ Author: SAEROX
 
                     <!-- End Container -->
                     <!-- Begin Page Footer-->
-                    
+
                     <!-- End Page Footer -->
                     <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
                     <!-- Offcanvas Sidebar -->

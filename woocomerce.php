@@ -39,14 +39,14 @@ Author: SAEROX
         <div id="preloader">
             <div class="canvas">
                 <img src="assets/img/logo.png" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
+                <div class="spinner"></div>
             </div>
         </div>
         <!-- End Preloader -->
         <div class="page">
             <!-- Begin Header -->
             <header class="header">
-                <nav class="navbar fixed-top">         
+                <nav class="navbar fixed-top">
                     <!-- Begin Search Box-->
                     <div class="search-box">
                         <button class="dismiss"><i class="ion-close-round"></i></button>
@@ -157,23 +157,23 @@ Author: SAEROX
                                         <img src="assets/img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
                                     </li>
                                     <li>
-                                        <a href="pages-profile.html" class="dropdown-item"> 
+                                        <a href="pages-profile.html" class="dropdown-item">
                                             Profile
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="app-mail.html" class="dropdown-item"> 
+                                        <a href="app-mail.html" class="dropdown-item">
                                             Messages
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="dropdown-item no-padding-bottom"> 
+                                        <a href="#" class="dropdown-item no-padding-bottom">
                                             Settings
                                         </a>
                                     </li>
                                     <li class="separator"></li>
                                     <li>
-                                        <a href="pages-faq.html" class="dropdown-item no-padding-top"> 
+                                        <a href="pages-faq.html" class="dropdown-item no-padding-top">
                                             Faq
                                         </a>
                                     </li>
@@ -207,12 +207,13 @@ Author: SAEROX
                             <li><a href="outputxml1.php"><i class="la la-away"></i><span>Output version.1</span></a></li>
                             <li><a href="outputxml.php"><i class="la la-away"></i><span>Output version.2</span></a></li>
                             <li><a href="shownode.php"><i class="la la-away"></i><span>Output Advanced</span></a></li>
+                            <li><a href="comparexml.php"><i class="la la-away"></i><span>Compare XML Files</span></a></li>
                             <li><a href="woocomerce.php"><i class="la la-away"></i><span>WooCommerce</span></a></li>
                             <li><a href="magentorequest.php"><i class="la la-away"></i><span>Magento Request</span></a></li>
                             <li><a href="prestarequest.php"><i class="la la-away"></i><span>Presta Request</span></a></li>
                             <li><a href="xmlrequest.php"><i class="la la-away"></i><span>Get XML</span></a></li>
                         </ul>
-                        
+
                         <!-- End Main Navigation -->
                     </nav>
                     <!-- End Side Navbar -->
@@ -244,26 +245,26 @@ Author: SAEROX
                                     </div>
                                     <div class="widget-body">
                                         <div class="table-responsive">
-                                            
+
                                             <?php
                                             $json=file_get_contents("http://bifeks.com/wp-json/wc/v2/products?consumer_key=ck_3f4c7ae0490eba9fafcd0a89bd4673fb78bd1fc0&consumer_secret=cs_5d04cf638a398df38a5c9c6a78374370c7ed127c");
                                             $data =  json_decode($json);
-                                            
+
                                             if ($data) {
                                             // Open the table
                                             echo '<table class="table mb-0">';
-                                                
+
                                             $row=0;
-                                                
+
 
                                             // Cycle through the array
                                             foreach($data as $k) {
-                                                
+
                                                 if ($row==0)
                                                 {
                                                     echo '<thead>
                                                     <tr>
-                                                        
+
                                                         <th><select style="width:75px;">
   <option value="" selected> -------- </option>
   <option value="">PROD_#</option>
@@ -362,7 +363,7 @@ Author: SAEROX
 </select></th>
                                                     </tr>
                                                 </thead>';
-                                                    
+
                                                     echo '<thead>
                                                     <tr>
                                                         <th>Name</th>
@@ -388,17 +389,17 @@ Author: SAEROX
                                                 echo "<td>$k->stock_quantity</td>";
                                                 echo "<td>$k->in_stock</td>";
                                                 echo "</tr>";
-                                                
+
                                             $row++;
                                           }
 
                                             // Close the table
                                             echo "</table>";
                                         }
-                                            
-                                            
+
+
                                             ?>
-                                                                    
+
                                         </div>
                                     </div>
                                 </div>

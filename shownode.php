@@ -46,17 +46,17 @@ Author: SAEROX
                             for( var i = 0; i<len; i++){
                                var id = response[i]['Product'];
 
-                                    
+
 
                                     $("#selectnode1").append("<option value="+id+">"+id+"</option>");
                                 }
                             }
-                        
+
 
                          });
 
                 });
-       
+
 
                 $("#selectnode1").change(function(){
                     var node = $(this).val();
@@ -73,12 +73,12 @@ Author: SAEROX
                             var len = response.length;
                             $(".card").empty();
                            for( var i = 0; i<len; i++){
-                                
+
                                var id = response[i]['Name'];
                                     $(".card").append("<p>"+id+"</p>");
                                 }
                             }
-                        
+
 
                     });
 
@@ -86,12 +86,12 @@ Author: SAEROX
 
      });
 
-    
+
 
     </script>
-    
-       
-       
+
+
+
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/bifeks_logo.png">
         <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
@@ -108,14 +108,14 @@ Author: SAEROX
         <div id="preloader">
             <div class="canvas">
                 <img src="assets/img/bifeks_logo.png" alt="logo" class="loader-logo">
-                <div class="spinner"></div>   
+                <div class="spinner"></div>
             </div>
         </div>
         <!-- End Preloader -->
         <div class="page">
             <!-- Begin Header -->
             <header class="header">
-                <nav class="navbar fixed-top">         
+                <nav class="navbar fixed-top">
                     <!-- Begin Search Box-->
                     <div class="search-box">
                         <button class="dismiss"><i class="ion-close-round"></i></button>
@@ -226,23 +226,23 @@ Author: SAEROX
                                         <img src="assets/img/avatar/avatar-01.jpg" alt="..." class="rounded-circle">
                                     </li>
                                     <li>
-                                        <a href="pages-profile.html" class="dropdown-item"> 
+                                        <a href="pages-profile.html" class="dropdown-item">
                                             Profile
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="app-mail.html" class="dropdown-item"> 
+                                        <a href="app-mail.html" class="dropdown-item">
                                             Messages
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" class="dropdown-item no-padding-bottom"> 
+                                        <a href="#" class="dropdown-item no-padding-bottom">
                                             Settings
                                         </a>
                                     </li>
                                     <li class="separator"></li>
                                     <li>
-                                        <a href="pages-faq.html" class="dropdown-item no-padding-top"> 
+                                        <a href="pages-faq.html" class="dropdown-item no-padding-top">
                                             Faq
                                         </a>
                                     </li>
@@ -276,12 +276,13 @@ Author: SAEROX
                             <li><a href="outputxml1.php"><i class="la la-away"></i><span>Output version.1</span></a></li>
                             <li><a href="outputxml.php"><i class="la la-away"></i><span>Output version.2</span></a></li>
                             <li><a href="shownode.php"><i class="la la-away"></i><span>Output Advanced</span></a></li>
+                            <li><a href="comparexml.php"><i class="la la-away"></i><span>Compare XML Files</span></a></li>
                             <li><a href="woocomerce.php"><i class="la la-away"></i><span>WooCommerce</span></a></li>
                             <li><a href="magentorequest.php"><i class="la la-away"></i><span>Magento Request</span></a></li>
                             <li><a href="prestarequest.php"><i class="la la-away"></i><span>Presta Request</span></a></li>
                             <li><a href="xmlrequest.php"><i class="la la-away"></i><span>Get XML</span></a></li>
                         </ul>
-                        
+
                         <!-- End Main Navigation -->
                     </nav>
                     <!-- End Side Navbar -->
@@ -290,10 +291,10 @@ Author: SAEROX
                 <div class="content-inner">
                     <div class="container-fluid">
                         <!-- Begin Page Header-->
-                        
-                        
 
-                           
+
+
+
 <div class="widget has-shadow" style="margin-top: 20px;padding: 20px;">
    <!--  <form action="" method="post" style="margin-left:20px;"> -->
 
@@ -320,7 +321,7 @@ Author: SAEROX
     </div>
 
     <!-- </form> -->
-           
+
 
         <div class="col-4">
 
@@ -329,7 +330,7 @@ Author: SAEROX
     <select class="custom-select" id="selectnode1" name="node_selected1">
 
        <option selected>Choose XML Node </option>
-       
+
      </select>
      </div>
      </div>
@@ -339,7 +340,7 @@ Author: SAEROX
 
 
 <div class="widget has-shadow" style="margin-top: 30px;padding: 30px;">
- 
+
   <button class="btn btn-primary" type="submit" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
    Press to show
   </button>
@@ -354,12 +355,12 @@ Author: SAEROX
     </div>
 
                         <!-- End Page Header -->
-                        
 
-       
+
+
                     <!-- End Container -->
                     <!-- Begin Page Footer-->
-                    
+
                     <!-- End Page Footer -->
                     <a href="#" class="go-top"><i class="la la-arrow-up"></i></a>
                     <!-- Offcanvas Sidebar -->

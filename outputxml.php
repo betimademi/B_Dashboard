@@ -228,6 +228,7 @@ Author: SAEROX
                             <li><a href="outputxml1.php"><i class="la la-away"></i><span>Output version.1</span></a></li>
                             <li><a href="outputxml.php"><i class="la la-away"></i><span>Output version.2</span></a></li>
                             <li><a href="shownode.php"><i class="la la-away"></i><span>Output Advanced</span></a></li>
+                            <li><a href="comparexml.php"><i class="la la-away"></i><span>Compare XML Files</span></a></li>
                             <li><a href="woocomerce.php"><i class="la la-away"></i><span>WooCommerce</span></a></li>
                             <li><a href="magentorequest.php"><i class="la la-away"></i><span>Magento Request</span></a></li>
                             <li><a href="prestarequest.php"><i class="la la-away"></i><span>Presta Request</span></a></li>
