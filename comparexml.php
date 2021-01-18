@@ -26,7 +26,66 @@ Author: SAEROX
           });
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
 
+        $(document).ready(function(){
+
+            $("#selectoldfile").change(function(){
+                  xml = $(this).val();
+
+                    $.ajax({
+                        url: 'ajaxgetnode.php',
+                        type: 'POST',
+                        data: {selectfile:xml,getfirstnode:"outputfirstnode"},
+                        dataType: 'json',
+                        success:function(response){
+
+                        var len = response.length;
+                        $("#selectnode1").empty();
+                        $("#selectnode1").append("<option selected>Choose XML Node </option>");
+                        for( var i = 0; i<len; i++){
+                           var id = response[i]['Product'];
+
+
+
+                                $("#selectnode1").append("<option value="+id+">"+id+"</option>");
+                            }
+                        }
+
+
+                     });
+
+            });
+
+            $("#selectnewfile").change(function(){
+                  xml = $(this).val();
+
+                    $.ajax({
+                        url: 'ajaxgetnode.php',
+                        type: 'POST',
+                        data: {selectfile:xml,getfirstnode:"outputfirstnode"},
+                        dataType: 'json',
+                        success:function(response){
+
+                        var len = response.length;
+                        $("#selectnode2").empty();
+                        $("#selectnode2").append("<option selected>Choose XML Node </option>");
+                        for( var i = 0; i<len; i++){
+                           var id = response[i]['Product'];
+
+
+
+                                $("#selectnode2").append("<option value="+id+">"+id+"</option>");
+                            }
+                        }
+
+
+                     });
+
+            });
+
+        });
+        </script>
         <!-- Favicon -->
         <link rel="apple-touch-icon" sizes="180x180" href="assets/img/bifeks_logo.png">
         <!-- <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
@@ -264,9 +323,31 @@ Author: SAEROX
             ?>
 
             </select>
-                <button type="submit" class="btn btn-outline-danger" name="removed">Removed from new XML</button>
-                <button type="submit" class="btn btn-outline-success" name="added">New Products added</button>
+
+
+
         </div>
+
+        <div class="input-group mb-3">
+
+            <select class="custom-select" id="selectnode1" name="node_selected1">
+
+               <option selected>Choose XML Old Node </option>
+
+             </select>
+
+
+                 <select class="custom-select" id="selectnode2" name="node_selected2">
+
+                    <option selected>Choose XML New Node </option>
+
+                  </select>
+
+                  </div>
+
+                  <button type="submit" class="btn btn-outline-danger" name="removed">Removed from new XML</button>
+                  <button type="submit" class="btn btn-outline-success" name="added">New Products added</button>
+                  <button type="submit" class="btn btn-outline-primary" name="generate">Generate XML file</button>
 
     </form>
 </div>
@@ -279,16 +360,20 @@ Author: SAEROX
                     <tr>
                         <th>Status</th>
                         <th>Title</th>
-                        <th>UrunKartiID</th>
+                        <th>Product ID</th>
                     </tr>
 
             <?php
 
-            if(isset($_POST['removed']))
-            {
 
-                $oldfile = (dirname(__FILE__).'/uploads/oldifondi.xml');
-                $newfile = (dirname(__FILE__).'/uploads/newifondi.xml');
+
+            if(isset($_POST['removed']) && isset($_POST['select-old']) && isset($_POST['select-new']))
+            {
+                $oxml = $_POST['select-old'];
+                $nxml = $_POST['select-new'];
+
+                $oldfile = (dirname(__FILE__).'/uploads/'.$oxml);
+                $newfile = (dirname(__FILE__).'/uploads/'.$nxml);
 
 
                 if (file_exists($newfile))
@@ -335,10 +420,13 @@ Author: SAEROX
                     }
 
 
-                    elseif(isset($_POST['added'])){
+                    if(isset($_POST['added']) && isset($_POST['select-old']) && isset($_POST['select-new'])){
 
-                        $oldfile = (dirname(__FILE__).'/uploads/oldifondi.xml');
-                        $newfile = (dirname(__FILE__).'/uploads/newifondi.xml');
+                        $oxml = $_POST['select-old'];
+                        $nxml = $_POST['select-new'];
+
+                        $oldfile = (dirname(__FILE__).'/uploads/'.$oxml);
+                        $newfile = (dirname(__FILE__).'/uploads/'.$nxml);
 
                         if (file_exists($oldfile))
                         {
@@ -363,11 +451,14 @@ Author: SAEROX
                         {
 
                             $newxml = simplexml_load_file($newfile);
+
                             //Load the new product IDs into an array
                             foreach($newxml->xpath('//Urun') as $newproduct){
 
                                //Add the current product's Id to $y
-                               $y = $newproduct->UrunKartiID;
+
+                                $y = $newproduct->UrunKartiID;
+
                                //Test to see if the current product's Id is in the array of old products
                                //if it is not it must be back in stock
                                if(!in_array($y, $productdata)) {
@@ -376,12 +467,15 @@ Author: SAEROX
                                    echo '<td>' . $newproduct->UrunAdi . '</td>';
                                    echo '<td>' . $newproduct->UrunKartiID . '</td>';
                                    echo '</tr>';
-
                                }
+
                            }
+
+                            //echo '<button type="submit" class="btn btn-outline-primary" name="generate">Generate XML file</button>';
 
                            unset($newproduct);//End loop
                         }
+                        
                         else
                         {
                             die("New XML file does not exist");
@@ -389,18 +483,26 @@ Author: SAEROX
 
 
                     }
+
+
+
+
+
+
             ?>
 
 
         </div>
 
 
+
+
 </div>
+
+
 </div>
+
 </div>        <!-- End Page Header -->
-
-
-
                     <!-- End Container -->
                     <!-- Begin Page Footer-->
 
